@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from sunnysiderepairshop.com/wp-content/themes/sunny/view/booking.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Dec 2025 01:21:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking Form</title>
+    <script src="../../../../../code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        form {
+            background: transparent;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], 
+        input[type="email"], 
+        input[type="date"], 
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        input[type="date"]:focus, 
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        button {
+            margin: 5px; /* Add margin for spacing */
+            width: 290px;
+            padding: 10px; /* Padding for button */
+            color: black;
+            border-radius: 5px;
+            border: 2px solid white; /* Border style */
+            background-color: #f7e14e; /* Background color */
+            cursor: pointer; /* Pointer on hover */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+        button:hover {
+            background-color: black; /* Change background on hover */
+            color: white; /* Change text color on hover */
+
+        }
+        .timeslot-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping to the next row */
+        }
+
+        .timeslot-button {
+            flex: 0 0 calc(33.33% - 10px); /* 3 columns with space */
+            margin: 5px; /* Add margin for spacing */
+            padding: 10px; /* Padding for button */
+            color: black;
+            border-radius: 5px;
+            border: 2px solid white; /* Border style */
+            background-color: #f7e14e; /* Background color */
+            cursor: pointer; /* Pointer on hover */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+        .timeslot-button:hover {
+            background-color: black; /* Change background on hover */
+            color: white; /* Change text color on hover */
+        }
+        .selected {
+            background-color: black; /* Change to your desired color */
+            color: white; /* Change text color if necessary */
+            border-color: white; /* Optional: Change border color to match */
+        }
+
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            background-color: #e7f9e7;
+            color: #4CAF50;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #timeslotButtons {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #bookingdate {
+            width: 100%; /* Make the input field full width */
+            max-width: 200px; /* Limit the maximum width */
+            padding: 10px; /* Add padding for better spacing */
+            border-radius: 5px; /* Round the corners */
+            background-color: #F8F9FA; /* Light background color */
+            font-size: 16px; /* Set font size */
+            color: #333; /* Text color */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        #bookingdate:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect on focus */
+        }
+
+        #category {
+            width: 100%; /* Make the input field full width */
+            max-width: 220px; /* Limit the maximum width */
+            border-radius: 5px; /* Round the corners */
+            font-size: 16px; /* Set font size */
+            color: #333; /* Text color */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        #category:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect on focus */
+        }
+        #service {
+            width: 100%; /* Make the input field full width */
+            max-width: 220px; /* Limit the maximum width */
+            padding: 10px; /* Add padding for better spacing */
+            border-radius: 5px; /* Round the corners */
+            font-size: 16px; /* Set font size */
+            color: #333; /* Text color */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        #service:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect on focus */
+        }
+        .form-row {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            gap: 10px;
+        }
+
+        label {
+            margin-right: -10px; /* Add margin to labels for spacing */
+        }
+
+        .tmslt {
+            padding: 10px;
+        }
+        /* Basic styles for the navbar */
+        .navbar {
+            background-color: black; /* Dark background */
+            width: 100%; /* Full width */
+            height: 60px;
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            z-index: 1030; /* Ensure the navbar is above other elements */
+
+        }
+
+        /* Ensure body has padding to prevent content overlap with the navbar */
+        body {
+            padding-top: 56px; /* Adjust this value based on your navbar's height */
+        }
+
+        /* Logo image styles */
+        .navbar-brand img {
+            height: 30px; /* Keep the logo height */
+            margin-top: 8px; /* Center image if needed */
+            margin-left: 15px;
+        }
+        .navbar-1 {
+            background-color: black; /* Dark background */
+            width: 100%; /* Full width */
+            height: 60px;
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            z-index: 1030; /* Ensure the navbar is above other elements */
+
+        }
+
+        /* Logo image styles */
+        .navbar-brand-1 img {
+            height: 40px; /* Keep the logo height */
+            margin-top: 8px; /* Center image if needed */
+            margin-left: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.5rem; /* Adjust padding for mobile */
+            }
+
+            .navbar-brand img {
+                height: 40px; /* Smaller logo on mobile */
+            }
+            .navbar-1 {
+                padding: 0.5rem; /* Adjust padding for mobile */
+            }
+
+            .navbar-brand-1 img {
+                height: 40px; /* Smaller logo on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed top bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid d-flex align-items-center">
+            <!-- Logo image -->
+            <a class="navbar-brand" href="https://carsage.us/">
+                <img src="carsagelogo.png" alt="Carsage Logo" style="height: 30px;">
+            </a>
+            <a class="navbar-brand-1" href="../../../../index.html">
+                <img src="sunnyside.png" alt="Sunnyside Auto Repair";">
+            </a>
+        </div>
+    </nav>
+
+
+    <form id="bookingForm" method="POST">
+        <div class="form-row">
+            <select name="category" id="category" required>
+                <option value="">Category</option>
+                <option value='Body Repair Services'>Body Repair Services</option><option value='Brake and Suspension Services'>Brake and Suspension Services</option><option value='Electrical Services'>Electrical Services</option><option value='Engine and Transmission Services'>Engine and Transmission Services</option><option value='Glass Services'>Glass Services</option><option value='Hybrid and Electric Vehicle Services'>Hybrid and Electric Vehicle Services</option><option value='Maintenance Services'>Maintenance Services</option><option value='Others'>Others</option>            </select>
+
+            <select name="service" id="service" required>
+                <option value="">Service</option>
+            </select>
+
+            <input type="date" name="bookingdate" id="bookingdate" required>
+        </div>
+
+        <div id="timeslots" class="hidden">
+            <h3 class="tmslt">Please select timeslot:</h3>
+            <div id="timeslotButtons"></div>
+        </div>
+
+        <div id="userDetails" class="hidden">
+            <input type="text" name="username" id="username" placeholder="Enter your name here" required>
+
+            <input type="text" name="phonenumber" id="phonenumber" placeholder="Enter your phone number" required pattern="^\d{10}$" title="Please enter a valid 10-digit phone number (e.g., 1234567890)">
+
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+            <input type="hidden" name="bookingtime" id="bookingtime">
+
+            <!-- Checkbox for user agreement -->
+
+                <input type="checkbox" id="consent" name="consent" value="1">
+                    <label for="consent" style="font-size: 12px; line-height: 1.4;">
+                       By clicking this box above, I agree to receive text messages from Sunnyside Auto Repair at the phone number provided. This includes notifications related to my requests, services, appointments, and occasional promotional updates and marketing messages. Message and data rates may apply. Message frequency varies. I understand that consent is not a condition of purchase. Unsubscribe any time by replying STOP.
+                    </label>
+
+
+            <button type="submit" name="submit_booking">Book Service</button>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function() {
+            // Set today's date as the minimum selectable date
+            const today = new Date().toISOString().split('T')[0];
+            $('#bookingdate').attr('min', today);
+            // Fetch services based on category selection
+            $('#category').change(function() {
+                let category = $(this).val();
+                $.ajax({
+                    url: 'fetch_services.php',
+                    type: 'POST',
+                    data: { category: category },
+                    success: function(data) {
+                        $('#service').html(data);
+                    }
+                });
+            });
+
+            // Fetch available timeslots based on date and category/service
+            $('#bookingdate').change(function() {
+                let bookingdate = $(this).val();
+                let category = $('#category').val();
+                let service = $('#service').val();
+
+                if (category && service) {
+                    $.ajax({
+                        url: 'fetch_timeslots.php',
+                        type: 'POST',
+                        data: { bookingdate: bookingdate, category: category, service: service },
+                        success: function(data) {
+                            $('#timeslotButtons').html(data);
+                            $('#timeslots').removeClass('hidden');
+                        }
+                    });
+                }
+            });
+
+            // Handle timeslot button clicks
+            $(document).on('click', '.timeslot-button', function() {
+                let time = $(this).data('time');
+                $('#bookingtime').val(time);
+                $('#userDetails').removeClass('hidden');
+            });
+            // Handle form submission
+            $('#bookingForm').on('submit', function(e) {
+                const phone = $('#phonenumber').val();
+                const phonePattern = /^\d{10}$/;
+
+                if (!phonePattern.test(phone)) {
+                    e.preventDefault(); // Prevent form submission
+                    alert("Please enter a valid 10-digit phone number (e.g., 1234567890).");
+                }
+            });
+            // Handle timeslot button clicks
+            $(document).on('click', '.timeslot-button', function() {
+                // Remove the selected class from all buttons
+                $('.timeslot-button').removeClass('selected');
+                
+                // Add the selected class to the clicked button
+                $(this).addClass('selected');
+                
+                let time = $(this).data('time');
+                $('#bookingtime').val(time);
+                $('#userDetails').removeClass('hidden');
+            });
+
+
+        });
+    </script>
+</body>
+
+<!-- Mirrored from sunnysiderepairshop.com/wp-content/themes/sunny/view/booking.php by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Dec 2025 01:21:52 GMT -->
+</html>
+
+
