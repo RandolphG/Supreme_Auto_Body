@@ -1,3 +1,3 @@
-#  Hrvatski Quiz 
+#  Supreme Auto Body 
 
-![completion_window](./public/assets/completion_window.jpg)
+![completion_window](./images/site_image.jpg)
