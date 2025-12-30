@@ -1,37 +1,10 @@
 {
-  "name": "croatian-quiz",
+  "name": "supreme-auto-body",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
-  "scripts": {
-    "start": "node ./server",
-    "test": "jest",
-    "test:e2e": "jest tests/e2e --runInBand --debug",
-    "jsdom": "jest --selectProjects jsdom --debug",
-    "e2e": "jest --selectProjects e2e --debug",
-    "build": "webpack",
-    "dev": "webpack serve"
-  },
   "dependencies": {
     "prettier": "^3.7.4",
-    "tsviz-cli": "^2.0.3",
     "vercel": "^39.2.2",
-    "@vercel/analytics": "^1.4.1",
-    "express": "^5.1.0",
-    "global": "^4.4.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "@jest/globals": "^29.7.0",
-    "babel-jest": "^29.7.0",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "puppeteer": "^24.1.0",
-    "source-map": "^0.7.4",
-    "webpack": "^5.75.0",
-    "webpack-bundle-analyzer": "^4.7.0",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "@vercel/analytics": "^1.4.1"
   }
 }
