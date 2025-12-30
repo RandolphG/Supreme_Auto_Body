@@ -106,7 +106,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header id="header" class="headfoo-wrap">
 	<div class="container headfoo_row headfoo_row-1">
 		<a href="../index.html" class="logo-link">
-						<img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/logo.png" srcset="https://sunnysiderepairshop.com/wp-content/themes/sunny/img/logo.png 992w" class="logo">		</a>
+						<img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/logo.png" srcset="theme/themes/sunny/img/logo.png 992w" class="logo">		</a>
 
 
 		<div class="headfoo_worktime-wrap">
@@ -130,7 +130,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 
 
-		<a href="tel:+19173964908" id="head_phone-mobile"><img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/icon-callback.svg" srcset="https://sunnysiderepairshop.com/wp-content/themes/sunny/img/icon-callback.svg 992w" class=""></a>
+		<a href="tel:+19173964908" id="head_phone-mobile"><img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/icon-callback.svg" srcset="theme/themes/sunny/img/icon-callback.svg 992w" class=""></a>
 
 
 		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -206,7 +206,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </ul>
 					<a href="tel:+19173964908" class="btn btn-warning">
 						<div class="media_obj">
-							<div class="icon"><img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/icon-callback.svg" srcset="https://sunnysiderepairshop.com/wp-content/themes/sunny/img/icon-callback.svg 992w" class=""></div>
+							<div class="icon"><img loading="lazy" decoding="async" src="../wp-content/themes/sunny/img/icon-callback.svg" srcset="theme/themes/sunny/img/icon-callback.svg 992w" class=""></div>
 							<div class="content">Contact Us</div>
 						</div>
 					</a>
@@ -474,7 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             $('#category').change(function() {
                 let category = $(this).val();
                 $.ajax({
-                    url: 'https://sunnysiderepairshop.com/wp-content/themes/sunny/view/fetch_services.php',
+                    url: 'theme/themes/sunny/view/fetch_services.php',
                     type: 'POST',
                     data: { category: category },
                     success: function(data) {
@@ -491,7 +491,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 if (category && service) {
                     $.ajax({
-                        url: 'https://sunnysiderepairshop.com/wp-content/themes/sunny/view/fetch_timeslots.php',
+                        url: 'theme/themes/sunny/view/fetch_timeslots.php',
                         type: 'POST',
                         data: { bookingdate: bookingdate, category: category, service: service },
                         success: function(data) {
@@ -681,7 +681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				
 				
 				<div class="btns_bottom-wrap">
-					<button class="btn btn-outline-dark" onclick="doModal({'url': 'https://sunnysiderepairshop.com/wp-content/themes/sunny/inc/mm_reviews/form-add_review.php', 'class': 'modal-lg', 'params': {'title': 'Leave a review', 'submit_title': 'Submit review'}});">Leave a review</button>
+					<button class="btn btn-outline-dark" onclick="doModal({'url': 'theme/themes/sunny/inc/mm_reviews/form-add_review.php', 'class': 'modal-lg', 'params': {'title': 'Leave a review', 'submit_title': 'Submit review'}});">Leave a review</button>
 					<button class="btn btn-warning" onclick="window.location.href='../wp-content/themes/sunny/view/booking.html';">Schedule Service</button>
 				</div>
 				
