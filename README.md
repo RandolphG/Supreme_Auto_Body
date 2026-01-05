@@ -1,3 +1,3 @@
 #  Supreme Auto Body 
 
-![completion_window](./images/site_image.jpg)
+![completion_window](./theme/sabny/img/site_image.jpg)
